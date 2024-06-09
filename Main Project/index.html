@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthquake Alerting System and Search Robot</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Earthquake Alerting System and Search Robot</h1>
+    </header>
+    <hr>
+    <div class="body">
+        <div class="EarthquakeStatus">
+            <div class="EarthquakeStatus1">
+                <p>Earthquake Status : </p>
+            </div>
+
+            <div class="EarthquakeStatus2"  id="earthquake-status">
+                <!-- <label for="eqs"> Earthquake Status <input type="text" name="eqs" id="eqs"></label> -->
+            </div>
+
+        </div>
+        
+        <div class="GPS" id="coordinates">
+            <div class="Lat" id="lat">
+                <p>Latitude : </p>
+            </div>
+            <div class="Lat1"  id="lat1">
+
+            </div>
+            <div class="Long"  id="long">
+                <p>Longitude : </p>
+
+            </div>
+            <div  class="Long1" id="long1">
+
+            </div>
+        </div>
+        
+        <div class="Gyro" id="sensor-data">
+            <div class="X" id="x">
+                <p>X : </p>
+            </div>
+            <div class="X1" id="x1"></div>
+            <div class="Y" id="y">
+                <p>Y : </p>
+            </div>
+
+            <div class="Y1" id="y1"></div>
+            <div class="Z" id="z">
+                <p>Z : </p>
+            </div>
+            <div class="Z1" id="z1"></div>
+
+
+            
+        </div>
+        <div class="Human" id="human">
+            <div class="Presence" id="presence">
+                <p>Human Presence : </p>
+            </div>
+            <div class="Presence1" id="presence1">
+                
+            </div>
+            <div class="Temp" id="temp">
+                <p>Temperature : </p>
+            </div>
+            <div class="Temp1" id="temp1">
+                
+            </div>
+        </div>
+    </div>
+    
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js";
+    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-database.js";
+    
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyBi8E5sTkHjAhghcNYDizUuqhm7_RmmhVk",
+        authDomain: "earthquake-detection-bfbe8.firebaseapp.com",
+        databaseURL: "https://earthquake-detection-bfbe8-default-rtdb.firebaseio.com",
+        projectId: "earthquake-detection-bfbe8",
+        storageBucket: "earthquake-detection-bfbe8.appspot.com",
+        messagingSenderId: "369001450259",
+        appId: "1:369001450259:web:bc326fee3722fe1dd9a8e6",
+        measurementId: "G-07VK833Y1J"
+    };
+    
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    // Initialize Realtime Database and get a reference to the service
+    const db = getDatabase(app);
+    const dbRef = ref(db, '/');
+
+    function updatePage(data) {
+        const earthquakeStatus = data.val().Earth_Status;
+        const lat = data.val().Lat;
+        const long = data.val().Long;
+        const x = data.val().X;
+        const y = data.val().Y;
+        const z = data.val().Z;
+        const human_presence=data.val().Human_presence;
+        const temp=data.val().Temp;
+
+        document.getElementById('earthquake-status').innerText = `${earthquakeStatus}`;
+        document.getElementById('lat1').innerText = `${lat}`;
+        document.getElementById('long1').innerText = `${long}`;
+        document.getElementById('x1').innerText = `${x}`;
+        document.getElementById('y1').innerText = `${y}`;
+        document.getElementById('z1').innerText = `${z}`;
+        document.getElementById('presence1').innerText = `${human_presence} `;
+        document.getElementById('temp1').innerText = `${temp} *C`;
+
+        if (temp > 32) {
+        document.getElementById('temp1').style.backgroundColor = "lightgreen";
+        document.getElementById('presence1').style.backgroundColor = "lightgreen";
+        } else {
+        document.getElementById('temp1').style.backgroundColor = "red";
+        document.getElementById('presence1').style.backgroundColor = "red";
+        }
+
+        if (earthquakeStatus.toLowerCase() === "earthquake detected") {
+        document.getElementById('earthquake-status').style.backgroundColor = "lightgreen";
+        } else {
+        document.getElementById('earthquake-status').style.backgroundColor = "red";
+        }
+
+        if((x<350 && x>5) || (y<350 && y>5)){
+            document.getElementById('x1').style.backgroundColor = "lightgreen";
+            document.getElementById('y1').style.backgroundColor = "lightgreen";
+            document.getElementById('z1').style.backgroundColor = "lightgreen";
+
+
+        }else{
+            document.getElementById('x1').style.backgroundColor = "lightgreen";
+            document.getElementById('y1').style.backgroundColor = "lightgreen";
+            document.getElementById('z1').style.backgroundColor = "lightgreen";
+
+        }
+
+
+
+    }
+
+    onValue(dbRef, (snapshot) => {
+        updatePage(snapshot);
+    });
+
+
+      </script>
+
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+    text-align: center;
+}
+
+/* 
+BODY ELEMENTS
+ */
+ body{
+    background-color: #DDB967;
+    padding: 10px;
+ }
+.header{
+    background-color: #ECE5F0;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.body{
+    background-color: #ECE5F0;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    /* align-items: center; */
+}
+.EarthquakeStatus{
+    width: auto;
+    height:100px;
+    display: grid;
+    /* background-color: #77B6EA; */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    margin: 5px;
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    /* border: black 2px solid; */
+    padding: 10px;
+    column-gap: 5px;
+}
+.EarthquakeStatus1{
+    width: auto;
+    height:80px;
+    display: grid;
+    background-color: #77B6EA;
+    /* grid-template-columns: 1fr 1fr; */
+    /* grid-template-rows: 1fr; */
+    text-align: center;
+    align-items: center;
+    /* margin: 10px; */
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    border: black 2px solid;
+    padding: 10px;
+}
+.EarthquakeStatus2{
+    width: auto;
+    height:80px;
+    display: grid;
+    background-color: #77B6EA;
+    /* grid-template-columns: 1fr 1fr; */
+    /* grid-template-rows: 1fr; */
+    text-align: center;
+    align-items: center;
+    /* margin: 10px; */
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    border: black 2px solid;
+    padding: 10px;
+}
+
+.GPS{
+    display: grid;
+    width: auto;
+
+    height:100px;
+    align-items: center;
+    /* background-color: #77B6EA; */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    
+    column-gap: 5px;
+    /* align-items: center; */
+    text-align: center;
+    margin: 10px;
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    /* border: black 2px solid; */
+    padding: 10px;
+}
+.Lat1,.Lat, .Long1, .Long{
+
+    display: grid;
+    height:100px;
+    
+    background-color: #77B6EA;
+    align-items: center;
+    text-align: center;
+    margin: 5px;
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    border: black 2px solid;
+    padding: 10px;
+}
+.Gyro{
+    display: grid;
+    width: auto;
+
+    height:100px;
+    /* background-color: #77B6EA; */
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 1fr;
+    row-gap: 5px;
+    column-gap: 10px;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    /* border: black 2px solid; */
+    padding: 10px;
+}
+.X, .Y, .Z, .X1, .Y1, .Z1{
+    display: grid;
+    height:100px;
+    
+    background-color: #77B6EA;
+    align-items: center;
+    text-align: center;
+    margin: 5px;
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    border: black 2px solid;
+    padding: 10px;
+}
+.Human{
+    display: grid;
+    width: auto;
+
+    height:100px;
+    /* background-color: #77B6EA; */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    row-gap: 5px;
+    column-gap: 10px;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    /* border: black 2px solid; */
+    padding: 10px;
+}
+.Presence, .Presence1, .Temp, .Temp1{
+    display: grid;
+    height:100px;
+    
+    background-color: #77B6EA;
+    align-items: center;
+    text-align: center;
+    margin: 5px;
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    border: black 2px solid;
+    padding: 10px;
+}
