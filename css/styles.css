@@ -173,3 +173,35 @@ BODY ELEMENTS
     border: black 2px solid;
     padding: 10px;
 }
+.joystick-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-rows: 2fr; */
+    grid-gap: 10px;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    border: black 2px solid;
+    padding: 10px;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+button:active {
+    background-color: #01070e;
+}
